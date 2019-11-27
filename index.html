@@ -1,0 +1,1283 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>中南e家大数据平台</title>
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="renderer" content="webkit">
+		<link rel="stylesheet" type="text/css" href="./style/style_xtjk.css" />
+		<!-- jQuery  -->
+		<script src="./js/jquery.min.js"></script>
+		<script type="text/javascript" src="./js/layout_setting.js"></script>
+		<script src="./js/lib/countUp/jquery.waypoints.min.js"></script>
+		<script type="text/javascript" src="./js/lib/countUp/jquery.countup.js"></script>
+	</head>
+
+	<body>
+		<!-- wrapper start -->
+		<div class="chart_wrapper bg_chart">
+			<!-- chart_header start -->
+			<div class="chart_header">
+				<div class="logo float_l pl15">
+					<img src="./images/logo_xtjk.png" alt="logo" />
+				</div>
+			</div>
+			<!-- chart_header end -->
+			<div class="chart_main clearfix">
+				<!-- 中间地图 -->
+				<div class="chart_modCenter main-scene">
+					<div id="xtjkChartmap" class="chart_map" style="display: none"></div>
+					<div class="scene-content">
+						<div class="mod_box mod_box_table2 fl" style="width: 100%">
+							<h3 class="mod_title nobg">
+								<span class="tit_item"></span>开门记录</h3>
+							<div class="ranklist-wrap">
+								<div class="chart_box" id="openRecordChart">
+								</div>
+							</div>
+						</div>
+
+						<div class="mod_box mod_box_table2 fl" style="width: 100%;margin-top: 120px">
+							<h3 class="mod_title nobg">
+								<span class="tit_item"></span>民族分布</h3>
+							<div class="ranklist-wrap">
+								<div class="chart_box" id="mingzhuList">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- chart_modLeft start -->
+				<div class="chart_modLeft">
+					<a class="icon icon_arrow icon_arrow_left" style="display: none"></a>
+					<div class="scene-content">
+						<div class="mod_box">
+							<h3 class="mod_title">
+								<span class="tit_item"></span>房屋入住率</h3>
+							<div class="chart_box">
+								<div id="houseCheckinRate" class="chart"></div>
+							</div>
+						</div>
+
+						<div class="mod_box" style="margin-top: 100px">
+							<h3 class="mod_title">
+								<span class="tit_item"></span>人员类型统计</h3>
+							<div class="chart_box">
+								<div id="userStyleStatId" class="chart"></div>
+							</div>
+						</div>
+
+						<!--          <div class="mod_box">
+                <h3 class="mod_title"><span class="tit_item"></span>入侵类别</h3>
+                <div id="rqlbList" class="chart_box">
+                  <ul class="rqlb_list clearfix">
+                    <li class="list_item " ><span class="fr counter">2800</span><span class="fl">SQL注入</span></li>
+                    <li class="list_item " ><span class="fr counter">3300</span><span class="fl">跨站脚本</span></li>
+                    <li class="list_item " ><span class="fr counter">8700</span><span class="fl">木马病毒</span></li>
+                    <li class="list_item " ><span class="fr counter">13500</span><span class="fl">DDOS攻击</span></li>
+                    <li class="list_item " ><span class="fr counter">1800</span><span class="fl">CC攻击</span></li>
+                    <li class="list_item " ><span class="fr counter">2800</span><span class="fl">SQL注入</span></li>
+                    <li class="list_item " ><span class="fr counter">3300</span><span class="fl">跨站脚本</span></li>
+                    <li class="list_item " ><span class="fr counter">8700</span><span class="fl">木马病毒</span></li>
+                    <li class="list_item " ><span class="fr counter">13500</span><span class="fl">DDOS攻击</span></li>
+                    <li class="list_item " ><span class="fr counter">1800</span><span class="fl">CC攻击</span></li>
+                  </ul>
+                </div>
+              </div> -->
+					</div>
+
+				</div>
+				<!-- chart_modLeft end -->
+
+				<!-- chart_modRight start -->
+				<div class="chart_modRight">
+					<a class="icon icon_arrow icon_arrow_right" style="display: none"></a>
+					<div class="scene-content">
+
+
+
+						<div class="mod_box">
+							<h3 class="mod_title">
+								<span class="tit_item"></span>年龄段汇总</h3>
+							<div id="useAgeStatId" class="chart_box">
+
+							</div>
+						</div>
+
+
+						<div class="mod_box" style="margin-top: 100px">
+							<h3 class="mod_title">
+								<span class="tit_item"></span>平台信息</h3>
+							<div class="chart_box">
+								<ul id="" class="attacknode_list clearfix">
+									<li class="node_item">
+										<div class="text_wrap">
+											<p class="name">注册人数</p>
+											<p class="number grade6"></p>
+										</div>
+									</li>
+									<li class="node_item">
+										<div class="text_wrap">
+											<p class="name">入住人数</p>
+											<p class="number grade5"></p>
+										</div>
+									</li>
+									<li class="node_item">
+										<div class="text_wrap">
+											<p class="name">体检人数</p>
+											<p class="number grade4"></p>
+										</div>
+									</li>
+
+									<li class="node_item">
+										<div class="text_wrap">
+											<p class="name">高血压人数</p>
+											<p class="number grade3"></p>
+										</div>
+									</li>
+									<li class="node_item">
+										<div class="text_wrap">
+											<p class="name">高血糖人数</p>
+											<p class="number grade2"></p>
+										</div>
+									</li>
+									<li class="node_item">
+										<div class="text_wrap">
+											<p class="name">高胆固醇人数</p>
+											<p class="number grade1"></p>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- chart_modRight end -->
+
+				<!-- chart_modFooter start -->
+				<div class="chart_modFooter clearfix">
+					<a class="icon icon_arrow icon_arrow_down" style="display: none"></a>
+					<div class="scene-content">
+						<div class="mod_box mod_box_table1 fl">
+							<h3 class="mod_title nobg">
+								<span class="tit_item"></span>实时警告</h3>
+							<div class="ranklist-wrap">
+								<div class="ranklist ssjglist">
+									<div class="ranklist-head clearfix">
+										<ul class="ranklist-tr">
+											<li class="ranklist-th">级别</li>
+											<li class="ranklist-th">时间</li>
+											<li class="ranklist-th">描述</li>
+										</ul>
+									</div>
+									<div id="ssgj_table_id" class="ranklist-body clearfix">
+
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="mod_box mod_box_table2 fl">
+							<h3 class="mod_title nobg">
+								<span class="tit_item"></span>实时开门记录</h3>
+							<div class="ranklist-wrap">
+								<div class="ranklist ssgflist">
+									<div class="ranklist-head clearfix">
+										<ul class="ranklist-tr">
+											<li class="ranklist-th">姓名</li>
+											<li class="ranklist-th">手机号码</li>
+											<li class="ranklist-th">设备名称</li>
+											<li class="ranklist-th">开门方向</li>
+											<li class="ranklist-th">时间</li>
+										</ul>
+									</div>
+									<div id="ssgf_table" class="ranklist-body clearfix">
+
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="mod_box mod_box_table3 fr">
+							<h3 class="mod_title nobg">
+								<span class="tit_item"></span>性别分布</h3>
+							<div class="chart_box" id="sexChart" >
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- chart_modFooter start -->
+
+
+		</div>
+		<!-- main end -->
+		</div>
+		<!-- wrapper end -->
+
+		<!-- 引入 ECharts 文件 -->
+		<script type="text/javascript" src="./js/lib/echarts3/echarts.min.js"></script>
+		<script type="text/javascript" src="./js/monitorchart_setting.js"></script>
+		<script type="text/javascript" src="./js/monitortable_setting.js"></script>
+
+		<script type="text/javascript">
+			//var ctx="http://localhost:8091";
+			var ctx = "http://47.105.136.30:8091/znkjdoor";
+			var count = 0;
+			$(function() {
+				f_getRealtimeOpendoorRecordWarn();
+				//实时开门记录
+				setInterval(f_getRealtimeOpendoorRecord, 15000);
+				setInterval(f_getRealtimeOpendoorRecordWarn, 10000);
+				if (count == 0) {
+					f_getCheckinRateStat();
+					f_getUserStyleStat();
+					f_getUseAgeStatId();
+					f_getUseSexStat();
+					f_getOpenDoorRecord();
+					f_getHealthRecord();
+
+				} else {
+					setInterval(f_getCheckinRateStat, 3000);
+					setInterval(f_getUserStyleStat, 3000);
+					setInterval(f_getUseAgeStatId, 3000);
+					setInterval(f_getUseSexStat, 3000);
+					setInterval(f_getOpenDoorRecord, 3000);
+					setInterval(f_getHealthRecord, 3000);
+				}
+				
+			});
+        
+			Date.prototype.format = function(format) {
+				var args = {
+					"M+": this.getMonth() + 1,
+					"d+": this.getDate(),
+					"h+": this.getHours(),
+					"m+": this.getMinutes(),
+					"s+": this.getSeconds(),
+					"q+": Math.floor((this.getMonth() + 3) / 3), //quarter
+					"S": this.getMilliseconds()
+				};
+				if (/(y+)/.test(format))
+					format = format.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+				for (var i in args) {
+					var n = args[i];
+					if (new RegExp("(" + i + ")").test(format))
+						format = format.replace(RegExp.$1, RegExp.$1.length == 1 ? n : ("00" + n).substr(("" + n).length));
+				}
+				return format;
+			};
+
+			function f_getRealtimeOpendoorRecordWarn() {
+				var arr = ['天曦美之国1栋1单元门禁终端',
+					'天曦美之国1栋2单元门禁终端',
+					'天曦美之国1栋3单元门禁终端',
+					'天曦美之国2栋1单元门禁终端',
+					'天曦美之国2栋2单元门禁终端',
+					'天曦美之国2栋3单元门禁终端',
+					'天曦美之国3栋1单元门禁终端',
+					'天曦美之国3栋2单元门禁终端',
+					'天曦美之国3栋3单元门禁终端',
+					'天曦美之国4栋1单元门禁终端',
+					'天曦美之国4栋2单元门禁终端',
+					'天曦美之国4栋3单元门禁终端',
+					'天曦美之国5栋1单元门禁终端',
+					'天曦美之国5栋2单元门禁终端',
+					'天曦美之国5栋3单元门禁终端',
+					'天曦美之国6栋1单元门禁终端',
+					'天曦美之国6栋2单元门禁终端',
+					'天曦美之国6栋3单元门禁终端',
+					'天曦美之国7栋1单元门禁终端',
+					'天曦美之国7栋2单元门禁终端',
+					'天曦美之国7栋3单元门禁终端',
+					'天曦美之国8栋1单元门禁终端',
+					'天曦美之国8栋2单元门禁终端',
+					'天曦美之国8栋3单元门禁终端',
+					'天曦美之国9栋1单元门禁终端',
+					'天曦美之国9栋2单元门禁终端',
+					'天曦美之国9栋3单元门禁终端',
+					'天曦美之国10栋1单元门禁终端',
+					'天曦美之国10栋2单元门禁终端',
+					'天曦美之国10栋3单元门禁终端',
+					'天曦美之国11栋1单元门禁终端',
+					'天曦美之国11栋2单元门禁终端',
+					'天曦美之国11栋3单元门禁终端',
+					'学林雅苑1栋1单元门禁终端',
+					'学林雅苑2栋1单元门禁终端',
+					'学林雅苑3栋1单元门禁终端',
+					'学林雅苑4栋1单元门禁终端'
+				];
+				var html_fr = "";
+				$("#ssgj_table_id").empty();
+
+				var rd = Math.floor(Math.random() * (37 - 1)) + 1;
+				var open_date = new Date().format("yyyy-MM-dd hh:mm:ss");
+				var html_ul = '<ul class="ranklist-tr">';
+				html_ul = html_ul + ' <li><span class="grade_general">关门</span></li>';
+				html_ul = html_ul + ' <li><span>' + open_date + '</span></li>';
+				html_ul = html_ul + ' <li> <span>' + arr[rd] + '</span> </li>';
+				html_ul = html_ul + ' </ul>';
+				html_fr = html_fr + html_ul;
+				$("#ssgj_table_id").append(html_fr);
+
+			}
+
+			function f_getRealtimeOpendoorRecord() {
+				var html_fr = "";
+				$("#ssgf_table").empty();
+				$.ajax({
+					type: 'post',
+					url: ctx + "/bigData/getRealtimeOpendoorRecord",
+					dataType: "jsonp",
+					jsonp: "jsonpCallback",
+					jsonpCallback: "f_success_jsonpCallback_getRealtimeOpendoorRecord",
+					success: function(data) {
+						var list = data.list;
+						console.info("length----------->" + list.length);
+						//-------------------------------------------------------------------
+
+						for (var i = 0; i < list.length; i++) {
+
+							var dto = list[i];
+							var name = dto.name;
+							var phone = dto.phone;
+							var teminal_name = dto.teminal_name;
+							var open_date = dto.open_date;
+							var html_ul = '<ul class="ranklist-tr">';
+							html_ul = html_ul + ' <li><span>' + name + '</span></li>';
+							html_ul = html_ul + '<li> <span>' + phone + '</span> </li>';
+							html_ul = html_ul + ' <li> <span>' + teminal_name + '</span> </li>';
+							html_ul = html_ul + '<li> <span>入</span></li>';
+							html_ul = html_ul + ' <li><span>' + open_date + '</span></li>';
+							html_ul = html_ul + ' </ul>';
+							html_fr = html_fr + html_ul;
+						}
+						$("#ssgf_table").append(html_fr);
+					}
+				});
+			}
+
+			//*******start***&&&&&&&&&&&&&平台信息&&&&&&%%%%%%%%%%%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+			function f_getHealthRecord() {
+				$.ajax({
+					type: 'post',
+					url: ctx + "/bigData/getHealthRecord",
+					dataType: "jsonp",
+					jsonp: "jsonpCallback",
+					jsonpCallback: "f_success_jsonpCallback_getHealthRecord",
+					success: function(data) {
+						var registerNum = data.registerNum;
+						var checkinNum = data.checkinNum;
+						var physicalExaminNum = data.physicalExaminNum;
+						var hyperglycaemianNum = data.hyperglycaemianNum;
+						var hyperCholesterol = data.hyperCholesterol;
+						var hypertension = data.hypertension;
+
+
+						$(".grade1").html(hyperCholesterol); //高胆固醇人数
+						$(".grade2").html(hyperglycaemianNum); //高血糖人数
+						$(".grade3").html(hypertension);
+						$(".grade4").html(physicalExaminNum);
+						$(".grade5").html(checkinNum);
+						$(".grade6").html(registerNum);
+
+					}
+				});
+
+			}
+
+			//********end**&&&&&&&&&&&&&平台信息&&&&&&%%%%%%%%%%%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+			//&&&&&&&&&&&&&&&&&&&&&&&start&&&&&&&&&&&&&&&&开门记录&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+			function f_getOpenDoorRecord() {
+
+				$.ajax({
+					type: 'post',
+					url: ctx + "/bigData/getOpendoorRecord",
+					dataType: "jsonp",
+					jsonp: "jsonpCallback",
+					jsonpCallback: "f_success_jsonpCallback_getOpendoorRecord",
+					success: function(data) {
+						var h0 = data.h0;
+						console.info("h0--------------->" + h0);
+						var h1 = data.h1;
+						var h2 = data.h2;
+						var h3 = data.h3;
+						var h4 = data.h4;
+						var h5 = data.h5;
+						var h6 = data.h6;
+						var h7 = data.h7;
+						var h8 = data.h8;
+						var h9 = data.h9;
+						var h10 = data.h10;
+						var h11 = data.h11;
+						var h12 = data.h12;
+						var h13 = data.h13;
+						var h14 = data.h14;
+						var h15 = data.h15;
+						var h16 = data.h16;
+						var h17 = data.h17;
+						var h18 = data.h18;
+						var h19 = data.h19;
+						var h20 = data.h20;
+						var h21 = data.h21;
+						var h22 = data.h22;
+						var h23 = data.h23;
+						myEchart_userOpenDoorRecord(h0, h1, h2, h3, h4, h5, h6, h7, h8, h9, h10, h11, h12, h13, h14, h15, h16, h17,
+							h18, h19, h20, h21, h22, h23);
+					}
+				});
+			}
+			 var houseCheckinRate_object = echarts.init(document.getElementById('houseCheckinRate'));//房屋入住率
+			 var openRecordChart_object = echarts.init(document.getElementById('openRecordChart'));//开门记录
+			 var userStyleStatId_object = echarts.init(document.getElementById('userStyleStatId'));//人员类型统计
+			 var useAgeStatId_object = echarts.init(document.getElementById('useAgeStatId'));//年龄段汇总
+			 var userSexRate_object = echarts.init(document.getElementById('sexChart'));//性别分布
+			window.addEventListener("resize", function () {
+				let timer;
+				clearTimeout(timer);
+				timer = setTimeout(() => {
+					houseCheckinRate_object.resize();
+				    openRecordChart_object.resize();
+					userStyleStatId_object.resize();
+					useAgeStatId_object.resize();
+					userSexRate_object.resize();
+				}, 10); 
+			  });
+
+			function myEchart_userOpenDoorRecord(h0, h1, h2, h3, h4, h5, h6, h7, h8, h9, h10, h11, h12, h13, h14, h15, h16, h17,
+				h18, h19, h20, h21, h22, h23) {
+
+
+				var openRecordChart_object = echarts.init(document.getElementById('openRecordChart'));
+				var openRecordChart_option = {
+					color: ['#0de8fe'],
+					tooltip: {
+						trigger: 'axis',
+						axisPointer: { // 坐标轴指示器，坐标轴触发有效
+							type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
+						}
+					},
+					grid: {
+						top: 30,
+						left: '10%',
+						right: '10%',
+						bottom: 50
+					},
+					xAxis: [{
+						type: 'category',
+						data: ['0-1点', '1-2点', '2-3点', '3-4点', '4-5点', '5-6点', '6-7点', '7-8点', '8-9点',
+							'9-10点', '10-11点', '11-12点', '12-13点', '13-14点', '14-15点', '15-16点', '16-17点', '17-18点', '18-19点', '19-20点',
+							'20-21点', '21-22点', '22-23点', '23-24点'
+						],
+						axisTick: {
+							alignWithLabel: true
+						},
+						axisLine: {
+							lineStyle: {
+								color: '#ccc'
+							}
+						}
+					}],
+					yAxis: [{
+						type: 'value',
+						axisLine: {
+							lineStyle: {
+								color: '#ccc'
+							}
+						}
+					}],
+					series: [{
+						name: '开门次数',
+						type: 'bar',
+						barWidth: '60%',
+						itemStyle: {
+							normal: {
+								color: function(params) {
+									// build a color map as your need.
+									var colorList = [
+										'#C1232B', '#B5C334', '#FCCE10',
+										'#C1232B', '#B5C334', '#FCCE10', '#E87C25', '#27727B',
+										'#C1232B', '#B5C334', '#FCCE10', '#E87C25', '#27727B',
+										'#FE8463', '#9BCA63', '#FAD860', '#F3A43B', '#60C0DD',
+										'#D7504B', '#C6E579', '#F4E001', '#F0805A', '#26C0C0'
+									];
+									return colorList[params.dataIndex]
+								}
+
+							}
+						},
+						data: [h0, h1, h2, h3, h4, h5, h6, h7, h8, h9, h10, h11, h12, h13, h14, h15, h16, h17, h18, h19, h20, h21, h22,
+							h23
+						]
+					}],
+					animationEasing: 'elasticOut',
+					animationDelayUpdate: function(idx) {
+						return idx * 5;
+					}
+				};
+				// let timer;
+				// clearTimeout(timer);
+				// timer = setTimeout(() => {
+				// 	openRecordChart_object
+				// 	openRecordChart_object.resize();
+				// }, 10);
+				openRecordChart_object.setOption(openRecordChart_option);
+			}
+			//&&&&&&&&&&&&&&&&&&&&&&&end&&&&&&&&&&&&&&&&&&&开门记录&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+			//###############################start###############################4.住户性别統計率###############################
+			function f_getUseSexStat() {
+				$.ajax({
+					type: 'post',
+					url: ctx + "/bigData/getSexStat",
+					dataType: "jsonp",
+					jsonp: "jsonpCallback",
+					jsonpCallback: "f_success_jsonpCallback_getSexStat",
+					success: function(data) {
+						console.info("sexdata---->" + data);
+						var femaleCount = data.femaleCount;
+						var manCount = data.manCount;
+						myEchart_userSexStat(femaleCount, manCount);
+					}
+				});
+
+			}
+
+
+			function myEchart_userSexStat(femaleCount, manCount) {
+
+				//1.得到画图对象
+			
+				var userSexRate_option = {
+
+					tooltip: {
+						trigger: 'item',
+						formatter: "{b} :({d}%)"
+					},
+					series: [{
+							name: '',
+							type: 'pie',
+							radius: '55%',
+							center: ['50%', '40%'],
+							label: { //饼图图形上的文本标签
+								normal: {
+									show: true,
+									 position:'inner', //标签的位置
+									textStyle: {
+										fontWeight: 100,
+										fontSize: 10 //文字的字体大小
+									},
+									formatter: '{b}{d}%'
+
+
+								}
+							},
+							data: [{
+									value: femaleCount,
+									name: '女性'
+								},
+								{
+									value: manCount,
+									name: '男性'
+								}
+							],
+							itemStyle: {
+								emphasis: {
+									shadowBlur: 10,
+									shadowOffsetX: 0,
+									shadowColor: 'rgba(0, 0, 0, 0.5)'
+								},
+								normal: {
+									color: function(params) {
+										// build a color map as your need.
+										var colorList = [
+											'#38b1fc', '#0de8fe'
+
+										];
+										return colorList[params.dataIndex]
+									}
+
+								}
+							}
+						}
+
+					],
+					color: ['#1bcef6', '#0459ac'],
+					animationEasing: 'elasticOut',
+					animationDelayUpdate: function(idx) {
+						return idx * 5;
+					}
+				};
+
+
+
+				userSexRate_object.setOption(userSexRate_option);
+
+
+
+
+			}
+
+
+
+
+			//###############################end###############################4.住户性别統計率###############################
+
+			//**********************start**************3.人員年龄統計率************************************************************************************
+
+
+			function f_getUseAgeStatId() {
+
+
+				var age1 = 0;
+				var age2 = 0;
+				var age3 = 0;
+				var age4 = 0;
+
+				$.ajax({
+					type: 'post',
+					url: ctx + "/bigData/getUseAgeStat",
+					dataType: "jsonp",
+					jsonp: "jsonpCallback",
+					jsonpCallback: "f_success_jsonpCallback_getUseAgeStat",
+					success: function(data) {
+						age1 = data.age1;
+						age2 = data.age2;
+						age3 = data.age3;
+						age4 = data.age4;
+
+
+						console.info(age1);
+						console.info(age2);
+						console.info(age3);
+						console.info(age4);
+						//var list=data.list;
+						myEchart_userAgeStat(age1, age2, age3, age4);
+					}
+				});
+
+
+			}
+
+			function myEchart_userAgeStat(age1, age2, age3, age4) {
+
+
+				//1.得到对于的div
+				
+
+				//2.组装对应的图片和数据
+				var useAgeStatId_option = {
+					color: ['#0de8fe'],
+					tooltip: {
+						trigger: 'axis',
+						axisPointer: { // 坐标轴指示器，坐标轴触发有效
+							type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
+						}
+					},
+					grid: {
+						top: 30,
+						left: '20%',
+						right: '15%',
+						bottom: 30
+					},
+					xAxis: [{
+						type: 'category',
+						data: ['0-18岁', '18-40岁', '40-60岁', '60岁以上'],
+						axisTick: {
+							alignWithLabel: true
+						},
+						axisLine: {
+							lineStyle: {
+								color: '#ccc'
+							}
+						},
+						axisLabel: {
+							interval: 0
+						},
+						nameTextStyle: {
+							fontSize: 8
+						}
+					}],
+					yAxis: [{
+						type: 'value',
+						axisLine: {
+							lineStyle: {
+								color: '#ccc'
+							}
+						}
+					}],
+					series: [{
+						name: '数量',
+						type: 'bar',
+						barWidth: '60%',
+						itemStyle: {
+							normal: {
+								color: function(params) {
+									// build a color map as your need.
+									var colorList = [
+										'#0de8fe', '#97f668', '#ede34f',
+										'#eb5f60', '#38b1fc'
+									];
+									return colorList[params.dataIndex]
+								}
+
+							}
+						},
+						data: [age1, age2, age3, age4]
+					}],
+					animationEasing: 'elasticOut',
+					animationDelayUpdate: function(idx) {
+						return idx * 5;
+					}
+				};
+				//3.绑定
+
+				useAgeStatId_object.setOption(useAgeStatId_option);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			}
+
+
+
+			//***************end***************3.人員年龄統計率*********************************************************************************************************
+
+
+
+
+			//--------start--------2.人員類型統計率------------------------------------------------
+
+
+			function f_getUserStyleStat() {
+
+
+				$.ajax({
+					type: 'post',
+					url: ctx + "/bigData/getUserStyleStat",
+					dataType: "jsonp",
+					jsonp: "jsonpCallback",
+					jsonpCallback: "f_success_jsonpCallback",
+					success: function(data) {
+
+						console.info(data.nativeUser);
+
+						var nativeUser = data.nativeUser;
+						var foreignUser = data.foreignUser;
+						var renter = data.renter;
+						var careUser = data.careUser;
+						var partyUser = data.partyUser;
+						myEchart_userStyleRate(nativeUser, foreignUser, renter, careUser, partyUser);
+					}
+				});
+
+
+			}
+
+
+
+
+
+			function myEchart_userStyleRate(nativeUser, foreignUser, renter, careUser, partyUser) {
+				//1.得到对于的div
+				
+
+
+				//2.组装对应的图片和数据
+				var userStyleStatId_option = {
+					color: ['#0de8fe'],
+					tooltip: {
+						trigger: 'axis',
+						axisPointer: { // 坐标轴指示器，坐标轴触发有效
+							type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
+						}
+					},
+					grid: {
+						top: 30,
+						left: '18%',
+						right: '15%',
+						bottom: 30
+					},
+					xAxis: [{
+						type: 'category',
+						data: ['常住', '外来', '租客', '关爱', '党员'],
+						axisTick: {
+							alignWithLabel: true
+						},
+						axisLine: {
+							lineStyle: {
+								color: '#ccc'
+							}
+						},
+						axisLabel: {
+							interval: 0
+						},
+						nameTextStyle: {
+							fontSize: 8
+						}
+					}],
+					yAxis: [{
+						type: 'value',
+						axisLine: {
+							lineStyle: {
+								color: '#ccc'
+							}
+						}
+					}],
+					series: [{
+						name: '数量',
+						type: 'bar',
+						barWidth: '60%',
+						itemStyle: {
+							normal: {
+								color: function(params) {
+									// build a color map as your need.
+									var colorList = [
+										'#0de8fe', '#97f668', '#ede34f',
+										'#eb5f60', '#38b1fc'
+									];
+									return colorList[params.dataIndex]
+								}
+
+							}
+						},
+						data: [nativeUser, foreignUser, renter, careUser, partyUser]
+					}],
+					animationEasing: 'elasticOut',
+					animationDelayUpdate: function(idx) {
+						return idx * 5;
+					}
+				};
+				//3.绑定
+
+				userStyleStatId_object.setOption(userStyleStatId_option);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			}
+
+
+			//---------end-------2.人員類型統計率------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			//--------start--------1.房屋入住率------------------------------------------------		
+
+			function f_getCheckinRateStat() {
+				count = count + 1;
+				$.ajax({
+					type: 'post',
+					url: ctx + "/bigData/getCheckinRateStat",
+					dataType: "jsonp",
+					jsonp: "jsonpCallback",
+					jsonpCallback: "success_jsonpCallback",
+					success: function(data) {
+						console.log('入住率',data)
+						var sumHouseCount = data.sumHouseCount;
+						var hadCheckinHouseCount = data.hadCheckinHouseCount;
+						var noCheckinHouseCount = data.noCheckinHouseCount;
+						myEchart_houseCheckinRate(sumHouseCount, hadCheckinHouseCount, noCheckinHouseCount);
+					}
+				});
+			}
+
+			function myEchart_houseCheckinRate(sumHouseCount, hadCheckinHouseCount, noCheckinHouseCount) {
+				
+				var houseCheckinRate_option = {
+					title: {
+						text: '总房源' + sumHouseCount + '套',
+						textStyle: {
+							fontSize: 16,
+							color: '#32cd32'
+						},
+						x: "center",
+						padding: [
+							10, // 上
+							0, // 右
+							0, // 下
+							0, // 左
+						]
+					},
+					tooltip: {
+						trigger: 'item',
+						formatter: "{b} :({d}%)"
+					},
+					series: [{
+							name: '总房源1000套',
+							type: 'pie',
+							radius: '55%',
+							center: ['50%', '50%'],
+							label: { //饼图图形上的文本标签
+								normal: {
+									show: true,
+									position:'inner', //标签的位置
+									textStyle: {
+										fontWeight: 100,
+										fontSize: 10 //文字的字体大小
+									},
+									formatter: '{b}{d}%'
+
+
+								}
+							},
+							data: [{
+									value: hadCheckinHouseCount,
+									name: '已入住'
+								},
+								{
+									value: noCheckinHouseCount,
+									name: '未入住'
+								}
+							],
+							itemStyle: {
+								emphasis: {
+									shadowBlur: 10,
+									shadowOffsetX: 0,
+									shadowColor: 'rgba(0, 0, 0, 0.5)'
+								},
+								normal: {
+									color: function(params) {
+										// build a color map as your need.
+										var colorList = [
+											'#38b1fc', '#0de8fe'
+
+										];
+										return colorList[params.dataIndex]
+									}
+
+								}
+							}
+						}
+
+					],
+					color: ['#1bcef6', '#0459ac'],
+					animationEasing: 'elasticOut',
+					animationDelayUpdate: function(idx) {
+						return idx * 5;
+					}
+				};
+
+
+
+				houseCheckinRate_object.setOption(houseCheckinRate_option);
+			}
+
+			//---------end-------1.房屋入住率------------------------------------------------
+
+			/*
+
+
+			    var mingzhuChart = echarts.init(document.getElementById('mingzhuChart'));
+			    menjinOption = {
+			        color: ['#0de8fe'],
+			        tooltip: {
+			            trigger: 'axis',
+			            axisPointer: {            // 坐标轴指示器，坐标轴触发有效
+			                type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+			            }
+			        },
+			        grid: {
+			            top:30,
+			            left: '10%',
+			            right:'10%',
+			            bottom: 50
+			        },
+			        xAxis: [
+			            {
+			                type: 'category',
+			                data: ['0-1点', '1-2点', '2-3点', '3-4点', '4-5点', '5-6点', '6-7点','7-8点','8-9点',
+			                    '9-10点','10-11点','11-12点','12-13点','13-14点','15-16点','16-17点','17-18点','18-19点','19-20点','20-21点','21-22点','22-23点','23-24点'],
+			                axisTick: {
+			                    alignWithLabel: true
+			                },
+			                axisLine:{
+			                    lineStyle:{
+			                        color:'#ccc'
+			                    }
+			                }
+			            }
+			        ],
+			        yAxis: [
+			            {
+			                type: 'value',
+			                axisLine:{
+			                    lineStyle:{
+			                        color:'#ccc'
+			                    }
+			                }
+			            }
+			        ],
+			        series: [
+			            {
+			                name: '开门次数',
+			                type: 'bar',
+			                barWidth: '60%',
+			                itemStyle: {
+			                    normal: {
+			                        color: function(params) {
+			                            // build a color map as your need.
+			                            var colorList = [
+			                                '#C1232B','#B5C334','#FCCE10',
+			                                '#C1232B','#B5C334','#FCCE10','#E87C25','#27727B',
+			                                '#C1232B','#B5C334','#FCCE10','#E87C25','#27727B',
+			                                '#FE8463','#9BCA63','#FAD860','#F3A43B','#60C0DD',
+			                                '#D7504B','#C6E579','#F4E001','#F0805A','#26C0C0'
+			                            ];
+			                            return colorList[params.dataIndex]
+			                        }
+
+			                    }
+			                },
+			                data: [99, 15, 17,17,20, 330, 420,1000,1200,500,200,250,600,400,17,17,420, 330,1200,1150,420, 330, 15]
+			            }
+			        ],
+			        animationEasing: 'elasticOut',
+			        animationDelayUpdate: function (idx) {
+			            return idx * 5;
+			        }
+			    };
+
+			    mingzhuChart.setOption(menjinOption);
+
+			    //报表定时刷新
+			    sta.push(setInterval(function (){
+			            $('#mingzhuChart').animate({opacity:0},1200,function(){
+			                mingzhuChart.clear();
+			                mingzhuChart.setOption(menjinOption);
+			                $('#mingzhuChart').animate({opacity:1},3000);
+			            })
+			            //gjlyipChartBar.resize();
+			        }, 20100)
+			    )
+
+			    window.addEventListener("resize", function () {
+			        mingzhuChart.resize();
+			    });
+				
+				
+				*/
+		</script>
+
+		<script type="text/javascript">
+			var mingzhuList = echarts.init(document.getElementById('mingzhuList'));
+			menjinOption = {
+				color: ['#0de8fe'],
+				tooltip: {
+					trigger: 'axis',
+					axisPointer: { // 坐标轴指示器，坐标轴触发有效
+						type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
+					}
+				},
+				grid: {
+					top: 30,
+					left: '10%',
+					right: '10%',
+					bottom: 50
+				},
+				xAxis: [{
+					type: 'category',
+					data: ['汉族', '回族', '蒙古族', '满族', '苗族', '维吾尔族', '土家族', '彝族', '壮族',
+						'藏族', '布依族', '侗族', '瑶族', '朝鲜族', '白族', '哈尼族', '哈萨克族', '黎族', '傣族', '畲族', '僳僳族', '仡佬族', '其他'
+					],
+					axisTick: {
+						alignWithLabel: true
+					},
+					axisLine: {
+						lineStyle: {
+							color: '#ccc'
+						}
+					}
+				}],
+				yAxis: [{
+					type: 'value',
+					axisLine: {
+						lineStyle: {
+							color: '#ccc'
+						}
+					}
+				}],
+				series: [{
+					name: '数量',
+					type: 'bar',
+					barWidth: '60%',
+					itemStyle: {
+						normal: {
+							color: function(params) {
+								// build a color map as your need.
+								var colorList = [
+									'#C1232B', '#B5C334', '#FCCE10',
+									'#C1232B', '#B5C334', '#FCCE10', '#E87C25', '#27727B',
+									'#C1232B', '#B5C334', '#FCCE10', '#E87C25', '#27727B',
+									'#FE8463', '#9BCA63', '#FAD860', '#F3A43B', '#60C0DD',
+									'#D7504B', '#C6E579', '#F4E001', '#F0805A', '#26C0C0'
+								];
+								return colorList[params.dataIndex]
+							}
+
+						}
+					},
+					data: [1100, 190, 55, 35, 18, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+				}],
+				animationEasing: 'elasticOut',
+				animationDelayUpdate: function(idx) {
+					return idx * 5;
+				}
+			};
+
+			mingzhuList.setOption(menjinOption);
+
+			//报表定时刷新
+			sta.push(setInterval(function() {
+				$('#mingzhuList').animate({
+					opacity: 0
+				}, 1200, function() {
+					mingzhuList.clear();
+					mingzhuList.setOption(menjinOption);
+					$('#mingzhuList').animate({
+						opacity: 1
+					}, 3000);
+				})
+				//gjlyipChartBar.resize();
+			}, 20100))
+
+			window.addEventListener("resize", function() {
+				let timer;
+				clearTimeout(timer);
+				timer = setTimeout(() => {
+				    mingzhuList.resize();
+				}, 10); 
+			});
+		</script>
+
+		<script type="text/javascript">
+			/*
+    var dom = document.getElementById("sexChart");
+    var myChart = echarts.init(dom);
+    var app = {};
+    option = null;
+    option = {
+        title: {
+            text: '男/女 6100/4012',
+            textStyle:{
+                fontSize:16,
+                color:'#32cd32'
+            },
+            x:"center",
+            padding: [
+                20,  // 上
+                0, // 右
+                0,  // 下
+                0, // 左
+            ]
+        },
+        tooltip : {
+            trigger: 'item',
+            formatter: "{b}:({d}%)"
+        },
+
+        series : [
+            {
+                name: '男/女 6100/4012',
+                type: 'pie',
+                radius : '50%',
+                center: ['50%', '60%'],
+                data:[
+                    {value:6100, name:'男'},
+                    {value:4012, name:'女'}
+                ],
+                label:{            //饼图图形上的文本标签
+                    normal:{
+                        show:true,
+                        position:'outer', //标签的位置
+                        textStyle : {
+                            fontWeight : 20 ,
+                            fontSize : 10    //文字的字体大小
+                        },
+                        formatter:'{b}({d}%)'
+
+
+                    }
+                },
+                itemStyle: {
+                    emphasis: {
+                        shadowBlur: 10,
+                        shadowOffsetX: 0,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    },
+                    normal: {
+                        color: function(params) {
+                            // build a color map as your need.
+                            var colorList = [
+                                '#38b1fc','#0de8fe'
+
+                            ];
+                            return colorList[params.dataIndex]
+                        }
+
+                    }
+                }
+            }
+        ],
+        color: ['#1bcef6','#a333ff','#38f9f8','#165ff9']
+    };
+    ;
+    if (option && typeof option === "object") {
+        myChart.setOption(option, true);
+    }
+
+    window.addEventListener("resize", function () {
+        myChart.resize();
+    });
+	*/
+		</script>
+	</body>
+
+</html>
